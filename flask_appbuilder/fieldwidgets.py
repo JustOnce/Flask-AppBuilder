@@ -11,7 +11,7 @@ class DatePickerWidget(object):
     data_template = ('<div class="input-group date appbuilder_date" id="datepicker">'
                     '<span class="input-group-addon"><i class="fa fa-calendar cursor-hand"></i>'
                     '</span>'
-                    '<input class="form-control" data-format="yyyy-MM-dd" %(text)s/>'
+                    '<input class="form-control" data-format="YYYY-MM-DD" %(text)s/>'
                     '</div>'
                     )
 
@@ -36,7 +36,7 @@ class DateTimePickerWidget(object):
     data_template = ('<div class="input-group date appbuilder_datetime" id="datetimepicker">'
                     '<span class="input-group-addon"><i class="fa fa-calendar cursor-hand"></i>'
                     '</span>'
-                    '<input class="form-control" data-format="yyyy-MM-dd hh:mm:ss" %(text)s/>'
+                    '<input class="form-control" data-format="YYYY-MM-DD hh:mm:ss" %(text)s/>'
         '</div>'
         )
 

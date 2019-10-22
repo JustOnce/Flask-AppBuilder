@@ -75,9 +75,22 @@ function loadSelectData() {
 //---------------------------------------
 $(document).ready(function() {
 
-    $('.appbuilder_datetime').datetimepicker({format: "YYYY-MM-DD", locale: 'ru', tooltips: tooltips});
-    $('.appbuilder_date').datetimepicker({
-        format: "YYYY-MM-DD", locale: 'ru', tooltips: tooltips });
+    $('.appbuilder_datetime').each((index, element) => {
+        var datePrickerOptions = {format: "YYYY-MM-DD hh:mm:ss", locale: 'ru', tooltips: tooltips};
+        if ($(element).find('[data-format]').length) {
+            datePrickerOptions.format = $(element).find('[data-format]').attr('data-format');
+        }
+        $(element).datetimepicker(datePrickerOptions);
+    });
+
+    $('.appbuilder_date').each((index, element) => {
+        var datePrickerOptions = { format: "YYYY-MM-DD", locale: 'ru', tooltips: tooltips };
+        if ($(element).find('[data-format]').length) {
+            datePrickerOptions.format = $(element).find('[data-format]').attr('data-format');
+        }
+        $(element).datetimepicker(datePrickerOptions);
+    });
+
     $(".my_select2").select2({placeholder: "Select a State", allowClear: true});
     loadSelectData();
     loadSelectDataSlave();
